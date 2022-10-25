@@ -1,0 +1,55 @@
+"""
+第二周作业：
+实现图像的灰度化与二值化
+"""
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage.color import rgb2gray
+
+
+# 手动灰度化
+img = cv2.imread("lenna.png")
+print("img %s" % img)
+h, w = img.shape[:2]
+img_gray = np.zeros([h, w], img.dtype)
+# print(img_gray, img_gray.shape, img_gray.size)
+for i in range(h):
+    for j in range(w):
+        m = img[i, j]
+        img_gray[i, j] = int(m[0]*0.11 + m[1]*0.59 + m[2]*0.3)
+print("img show gray %s", img_gray)
+# cv2.imshow("img gray", img_gray)
+
+plt.subplot(221)
+img = plt.imread("lenna.png")
+plt.imshow(img)
+print("------image lenna------")
+print(img)
+
+# 调用opencv灰度化
+img_gray = rgb2gray(img)
+plt.subplot(222)
+plt.imshow(img_gray, cmap="gray")
+print("------image gray-------")
+print(img_gray)
+# gray = cv2.imshow("img gray", img_gray)
+
+
+# 二值化
+rows, cols = img_gray.shape
+for i in range(rows):
+    for j in range(cols):
+        if img_gray[i, j] <= 0.5:
+            img_gray[i, j] = 0
+        else:
+            img_gray[i, j] = 1
+
+print(img_gray)
+# img_binary = cv2.imshow("binary", img_gray)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+plt.subplot(223)
+plt.imshow(img_gray, cmap="gray")
+plt.show()
