@@ -1,0 +1,39 @@
+import numpy as np
+from skimage.color import rgb2gray
+import matplotlib.pyplot as plt
+from PIL import Image
+import cv2
+
+# 灰度化
+# img=cv2.imread('lenna.png')
+img=np.array(Image.open('lenna.png'))
+h,w=img.shape[:2]
+img_graw=np.zeros([h,w],img.dtype)
+for i in range(h):
+    for j in range(w):
+        m=img[i,j]
+        img_graw[i,j]=int(m[0]*0.3 + m[1]*0.59 + m[2]*0.11)
+print(img_graw)
+Image.fromarray(img_graw.astype('uint8'))
+
+#原图
+plt.subplot(221)
+img=plt.imread('lenna.png')
+plt.imshow(img)
+
+# 灰度化
+img_gray=rgb2gray(img)
+plt.subplot(222)
+plt.imshow(img_gray,cmap='gray')
+
+#二值化
+w,h=img_gray.shape
+# for i in range(w):
+#     for j in range(h):
+#         if (img_gray[i,j]<0.5):
+#             img_gray[i,j]=0
+#         else:
+#             img_gray[i,j]=1
+img_banary=np.where(img_gray<0.5,0,1)
+plt.subplot(223)
+plt.imshow(img_banary,cmap='gray')
