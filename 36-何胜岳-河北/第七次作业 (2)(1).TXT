@@ -1,0 +1,118 @@
+import scipy.special
+import numpy
+
+
+#构建一个类
+class NeuralNetWork:
+    def __init__(self,inputnodes,hiddennodes,outputnodes,learnrate):
+        self.inodes=inputnodes
+        self.hnodes=hiddennodes
+        self.onodes=outputnodes
+        self.lr=learnrate
+
+        # self.wih=numpy.random.rand(self.hnodes,self.inodes)-0.5
+        # self.who=numpy.random.rand(self.onodes,self.hnodes)-0.5
+        self.wih = (numpy.random.normal(0.0, pow(self.hnodes,-0.5), (self.hnodes,self.inodes) )  )
+        #这里是输入层与隐藏层之间的连接。    pow人为设定的一种算标准差方式，也可以直接设置值
+        self.who = (numpy.random.normal(0.0, pow(self.onodes,-0.5), (self.onodes,self.hnodes) )  )
+        #这里是隐藏层与输出层之间的连接
+
+
+        self.activation_function=lambda x:scipy.special.expit(x)
+        pass
+
+    def train(self,inputs_list,targets_list):
+        inputs=numpy.array(inputs_list,ndmin=2).T   #ndmin= 定义数组的最小维度
+        #把inputs_list, targets_list转换成numpy支持的二维矩阵.T表示做矩阵的转置
+        targets=numpy.array(targets_list,ndmin=2).T
+
+        hidden_inputs=numpy.dot(self.wih,inputs)
+        hidden_outputs=self.activation_function(hidden_inputs)
+        final_inputs=numpy.dot(self.who,hidden_outputs)
+        final_outputs=self.activation_function(final_inputs)
+
+        #Δwj,k=α∗Ek ∗ sigmoid (Ok)∗(1−sigmoid(Ok))⋅Oj⊤
+        output_errors=targets-final_outputs
+        hidden_errors=numpy.dot(self.who.T,output_errors*final_outputs*(1-final_outputs))
+        self.who+=self.lr*numpy.dot((output_errors*final_outputs*(1-final_outputs)),numpy.transpose(hidden_outputs))
+        self.wih+=self.lr*numpy.dot((hidden_errors*hidden_outputs*(1-hidden_outputs)),numpy.transpose(inputs))
+
+        pass
+
+    def query(self,inputs):
+        inputs = numpy.array(inputs, ndmin=2).T  # 输入进来的二维图像数据
+        hidden_inputs=numpy.dot(self.wih,inputs)    # 隐藏层计算，说白了就是线性代数中的矩阵的点积
+        hidden_outputs=self.activation_function(hidden_inputs)# 将隐藏层的输出是经过sigmoid函数处理
+        final_inputs=numpy.dot(self.who,hidden_outputs)
+        final_outputs=self.activation_function(final_inputs)
+        print(final_outputs)    # 最终的输出结果就是我们预测的数据
+        return final_outputs
+
+#主函数
+input_nodes = 784
+hidden_nodes = 200
+output_nodes = 10
+learn_rate = 0.1
+n=NeuralNetWork(input_nodes,hidden_nodes,output_nodes,learn_rate)
+
+# n.query([1.0, 0.5, -1.5])
+
+#读入训练数据
+training_data_file = open("dataset/mnist_train.csv",'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+#加入epocs,设定网络的训练循环次数
+epochs = 5
+for e in range(epochs):
+    #把数据依靠','区分，并分别读入
+    for record in training_data_list:
+        all_values = record.split(',')  # split分割成列表
+        inputs = (numpy.asfarray(all_values[1:]))/255.0 * 0.99 + 0.01
+        # numpy.asfarray(a, dtype=_nx.float_)[source]
+        # 返回转换为浮点类型的数组。
+
+        #设置图片与数值的对应关系
+        targets = numpy.zeros(output_nodes) + 0.01
+        targets[int(all_values[0])] = 0.99
+        n.train(inputs, targets)
+
+
+#读取测试数据
+test_data_file = open("dataset/mnist_test.csv")
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+
+scores = []
+for record in test_data_list:
+    all_values = record.split(',')
+    correct_number = int(all_values[0])
+    print("该图片对应的数字为:",correct_number)  #显示正确答案是什么
+
+    #预处理数字图片
+    inputs = (numpy.asfarray(all_values[1:])) / 255.0 * 0.99 + 0.01
+    #让网络判断图片对应的数字
+    outputs = n.query(inputs)
+    #找到数值最大的神经元对应的编号
+    label = numpy.argmax(outputs)
+
+    print("网络认为图片的数字是：", label)     #显示神经网络的结果
+    if label == correct_number:
+        scores.append(1)
+    else:
+        scores.append(0)
+
+
+print(scores)
+
+#计算图片判断的成功率
+scores_array = numpy.asarray(scores)
+print("perfermance = ", scores_array.sum() / scores_array.size)
+# sum：对的个数的和，size：长度（尺寸）
+# numpy.asarray(a, dtype=None, order=None)    将结构数据转化为ndarray。
+# 各个参数意义
+# a：输入的类数组数据，任何可以被转换为数组类型的类型。比如：列表，元组列表，元组的元组，列表的元组以及ndarrays。
+# dtype：数据类型，（可选参数），默认数据类型从输入的数据类型中继承。
+# order：不做讨论，没有认知的必要。
+# 有返回值，会得到一个数组类型的a数据。
+
