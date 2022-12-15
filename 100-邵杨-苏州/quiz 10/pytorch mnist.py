@@ -4,7 +4,7 @@ import numpy as np
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+
 
 
 transform = transforms.Compose([transforms.ToTensor(),
