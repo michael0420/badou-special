@@ -12,5 +12,5 @@
 |  [07](./Week_07)  |SIFT&opencv算法| ransac, hash |
 |  [08](./Week_08)  |神经网络&推理和训练|手推训练过程|
 |  [09](./Week_09)  |训练&框架|Keras和从零开始实现神经网络|
-|  [10](./Week_10)  |框架&CNN|Pytorch和CIFAR10卷机神经网络实现|
+|  [10](./Week_10)  |框架&CNN|Pytorch和CIFAR10卷积神经网络实现|
 |  [11](./Week_11)  |图像识别|AlexNet,vgg和Resnet的推理和训练|
