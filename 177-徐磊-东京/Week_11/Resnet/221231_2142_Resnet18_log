@@ -1,0 +1,54 @@
+
+start_time:20221231_222048
+
+Files already downloaded and verified
+Files already downloaded and verified
+using 50000 images for train, 10000 images for test
+Epoch:[  1/30, train loss:0.80169, train acc:0.7244, test loss:0.26901 test acc:0.9077
+Epoch:[  2/30, train loss:0.54814, train acc:0.8089, test loss:0.23670 test acc:0.9193
+Epoch:[  3/30, train loss:0.48070, train acc:0.8333, test loss:0.18869 test acc:0.9381
+Epoch:[  4/30, train loss:0.44881, train acc:0.8457, test loss:0.19248 test acc:0.9342
+Epoch:[  5/30, train loss:0.42677, train acc:0.8515, test loss:0.17535 test acc:0.9406
+Epoch:[  6/30, train loss:0.39954, train acc:0.8608, test loss:0.19470 test acc:0.9354
+Epoch:[  7/30, train loss:0.38578, train acc:0.8638, test loss:0.18245 test acc:0.9388
+Epoch:[  8/30, train loss:0.37192, train acc:0.8720, test loss:0.16934 test acc:0.9430
+Epoch:[  9/30, train loss:0.35962, train acc:0.8752, test loss:0.18025 test acc:0.9417
+Epoch:[ 10/30, train loss:0.35165, train acc:0.8794, test loss:0.15706 test acc:0.9472
+Epoch:[ 11/30, train loss:0.33756, train acc:0.8840, test loss:0.17147 test acc:0.9445
+Epoch:[ 12/30, train loss:0.33384, train acc:0.8840, test loss:0.18025 test acc:0.9409
+Epoch:[ 13/30, train loss:0.32819, train acc:0.8859, test loss:0.16633 test acc:0.9460
+Epoch:[ 14/30, train loss:0.31878, train acc:0.8893, test loss:0.16705 test acc:0.9452
+Epoch:[ 15/30, train loss:0.31131, train acc:0.8921, test loss:0.17214 test acc:0.9454
+Epoch:[ 16/30, train loss:0.30637, train acc:0.8944, test loss:0.16838 test acc:0.9485
+Epoch:[ 17/30, train loss:0.30253, train acc:0.8963, test loss:0.17368 test acc:0.9473
+Epoch:[ 18/30, train loss:0.29412, train acc:0.8987, test loss:0.16554 test acc:0.9505
+Epoch:[ 19/30, train loss:0.29127, train acc:0.8979, test loss:0.17641 test acc:0.9471
+Epoch:[ 20/30, train loss:0.28918, train acc:0.9007, test loss:0.16775 test acc:0.9488
+Epoch:[ 21/30, train loss:0.29004, train acc:0.9006, test loss:0.17261 test acc:0.9470
+Epoch:[ 22/30, train loss:0.28098, train acc:0.9025, test loss:0.18376 test acc:0.9434
+Epoch:[ 23/30, train loss:0.27365, train acc:0.9054, test loss:0.17068 test acc:0.9485
+Epoch:[ 24/30, train loss:0.27119, train acc:0.9050, test loss:0.17994 test acc:0.9480
+Epoch:[ 25/30, train loss:0.26632, train acc:0.9076, test loss:0.17722 test acc:0.9479
+Epoch:[ 26/30, train loss:0.27387, train acc:0.9053, test loss:0.18251 test acc:0.9463
+Epoch:[ 27/30, train loss:0.26150, train acc:0.9090, test loss:0.16308 test acc:0.9513
+Epoch:[ 28/30, train loss:0.26251, train acc:0.9088, test loss:0.17029 test acc:0.9508
+Epoch:[ 29/30, train loss:0.25616, train acc:0.9113, test loss:0.17545 test acc:0.9490
+Epoch:[ 30/30, train loss:0.25786, train acc:0.9114, test loss:0.17537 test acc:0.9502
+time end:20221231_23_03_31
+
+Training time 0:42:28
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.007 MB of 0.007 MB uploaded (0.007 MB deduped)wandb: \ 0.007 MB of 0.007 MB uploaded (0.007 MB deduped)wandb: | 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: \ 0.013 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: \ 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb:                                                                                
+wandb: W&B sync reduced upload amount by 47.3%             
+wandb: 
+wandb: Run history:
+wandb:   Test_acc ▁▃▆▅▆▅▆▇▆▇▇▆▇▇▇█▇█▇█▇▇█▇▇▇████
+wandb:  Test_loss █▆▃▃▂▃▃▂▂▁▂▂▂▂▂▂▂▂▂▂▂▃▂▂▂▃▁▂▂▂
+wandb:  Train_acc ▁▄▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇█▇███████████
+wandb: Train_loss █▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:   Test_acc 0.9502
+wandb:  Test_loss 0.17537
+wandb:  Train_acc 0.9114
+wandb: Train_loss 0.25786

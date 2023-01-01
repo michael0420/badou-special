@@ -1,0 +1,45 @@
+
+start_time:20221230_074313
+
+Files already downloaded and verified
+Files already downloaded and verified
+using 50000 images for train, 10000 images for test
+Epoch:[  1/200, train loss:1.97202, train acc:0.2576, test loss:1.72786 test acc:0.3732
+Epoch:[ 10/200, train loss:1.41091, train acc:0.4988, test loss:1.10458 test acc:0.6139
+Epoch:[ 20/200, train loss:1.27084, train acc:0.5498, test loss:0.98048 test acc:0.6575
+Epoch:[ 30/200, train loss:1.21168, train acc:0.5741, test loss:0.91335 test acc:0.6868
+Epoch:[ 40/200, train loss:1.17231, train acc:0.5878, test loss:0.84472 test acc:0.7095
+Epoch:[ 50/200, train loss:1.14364, train acc:0.6013, test loss:0.77644 test acc:0.7360
+Epoch:[ 60/200, train loss:1.10614, train acc:0.6132, test loss:0.77620 test acc:0.7357
+Epoch:[ 70/200, train loss:1.09542, train acc:0.6191, test loss:0.77396 test acc:0.7427
+Epoch:[ 80/200, train loss:1.07045, train acc:0.6302, test loss:0.75077 test acc:0.7484
+Epoch:[ 90/200, train loss:1.06757, train acc:0.6331, test loss:0.71234 test acc:0.7586
+Epoch:[100/200, train loss:1.04899, train acc:0.6370, test loss:0.68891 test acc:0.7703
+Epoch:[110/200, train loss:1.04835, train acc:0.6406, test loss:0.70227 test acc:0.7686
+Epoch:[120/200, train loss:1.04468, train acc:0.6404, test loss:0.67647 test acc:0.7734
+Epoch:[130/200, train loss:1.02865, train acc:0.6467, test loss:0.67152 test acc:0.7795
+Epoch:[140/200, train loss:1.01915, train acc:0.6501, test loss:0.71285 test acc:0.7649
+Epoch:[150/200, train loss:1.02019, train acc:0.6510, test loss:0.67872 test acc:0.7781
+Epoch:[160/200, train loss:1.00670, train acc:0.6555, test loss:0.67198 test acc:0.7765
+Epoch:[170/200, train loss:1.02676, train acc:0.6492, test loss:0.71354 test acc:0.7619
+Epoch:[180/200, train loss:1.02333, train acc:0.6510, test loss:0.68867 test acc:0.7740
+Epoch:[190/200, train loss:0.99469, train acc:0.6592, test loss:0.71266 test acc:0.7655
+Epoch:[200/200, train loss:0.99571, train acc:0.6576, test loss:0.69906 test acc:0.7794
+time end:20221230_10_11_24
+
+Training time 2:27:59
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.007 MB of 0.007 MB uploaded (0.007 MB deduped)wandb: \ 0.007 MB of 0.007 MB uploaded (0.007 MB deduped)wandb: | 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: \ 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: | 0.007 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: \ 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: \ 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.007 MB deduped)wandb:                                                                                
+wandb: W&B sync reduced upload amount by 49.2%             
+wandb: 
+wandb: Run history:
+wandb:   Test_acc ▁▃▄▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇████▇█▇█▇█▇████████
+wandb:  Test_loss █▇▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▁▁▂▁▂▁▁▁▂▁▁▁▁▁▁▁▁
+wandb:  Train_acc ▁▃▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇██████████████████████
+wandb: Train_loss █▆▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:   Test_acc 0.7794
+wandb:  Test_loss 0.69906
+wandb:  Train_acc 0.65756
+wandb: Train_loss 0.99571
